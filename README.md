@@ -1,23 +1,11 @@
 # **Elastic SIEM Home Lab Project**
 
 ## **Project Objective**  
-This project demonstrates setting up and using the **Elastic Stack SIEM** to monitor security events from a Kali Linux virtual machine. The lab covers key activities, including:  
-- Installing and configuring the **Elastic Agent** to forward logs from the Kali VM to the Elastic SIEM.  
-- Generating and analyzing security events.  
-- Creating a custom dashboard to visualize data.  
-- Setting up an alert to detect specific security incidents.  
-
-By the end of this project, I gained hands-on experience with Elastic SIEM, showcasing skills in log management, event detection, and incident response.
-
----
-
+The aim of this project is to establish a practical home lab using the Elastic Stack Security Information and Event Management (SIEM) platform and a Kali Linux virtual machine (VM). The lab focuses on generating and analyzing security events, configuring data forwarding through an agent, and utilizing Elastic's powerful querying capabilities. Additionally, it involves creating interactive dashboards and setting up alerts for security monitoring. This hands-on experience is an excellent addition to a resume and serves as a discussion point in interviews.
 ## **Tools Used**  
 - **Elastic Stack (SIEM)**: A platform for collecting, analyzing, and visualizing security data.  
 - **Kali Linux VM**: A penetration testing OS to simulate security events.  
 - **VirtualBox**: A virtualization platform to host the Kali Linux VM.  
-
----
-
 ## **Skills Gained**  
 - Setting up and using the Elastic SIEM for security monitoring.  
 - Installing and configuring Elastic Agents on Linux-based endpoints.  
@@ -29,16 +17,18 @@ By the end of this project, I gained hands-on experience with Elastic SIEM, show
 ## **Steps**  
 
 ### **Task 1: Setting up the Elastic SIEM Environment**  
-1. **Create an Elastic Account**:  
-   - Sign up for a free trial at [Elastic Cloud](https://cloud.elastic.co/registration).  
-   - Log in, click **Start your free trial**, and create a new **Elasticsearch** deployment.  
-   - Choose deployment size and region, then wait for it to complete.  
+- Sign up to use Elastic Cloud at Elastic Cloud.
+- Log in to the Elastic Cloud console.
 
-2. **Launch the SIEM Instance**:  
-   - Access the deployment and open the **Kibana** dashboard from the Elastic Cloud portal.
+- Click on Start your free trial.
 
----
+- Click on the Create Deployment button and select Elasticsearch as the deployment type.
 
+- Choose a region and deployment size that fits your needs and click on Create Deployment.
+
+- Wait for the configuration to complete.
+
+- Once the deployment is ready, click Continue.
 ### **Task 2: Installing Kali Linux on VirtualBox**  
 1. **Download the Kali Linux VM**:  
    - Download from [Kali.org](https://www.kali.org/get-kali/#kali-virtual-machines).  
