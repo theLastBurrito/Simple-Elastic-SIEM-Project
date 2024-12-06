@@ -59,3 +59,54 @@ To confirm the agent's functionality, I used Nmap on my Kali VM. This open-sourc
 - Run a scan on Kali machine by running the command: sudo nmap <vm-ip>.
   
 <img src="https://github.com/user-attachments/assets/c04c6966-dbf2-4265-9723-7dd66a5c17d1" alt="Description" width="500>
+
+- This scan generates several security events, such as the detection of open ports and the identification of services running on those ports. Run a few more Nmap scans (“nmap -sS <ip address>”, “nmap -sT <ip address>”, “nmap -p- <ip address>”etc..”
+
+<img src="https://github.com/user-attachments/assets/1b2d9d48-22f5-4cd7-9c5a-224ebc4f97ff" alt="Description" width="500>
+
+### **Task 4 : Querying for Security Events in the Elastic SIEM**
+With data forwarded from the Kali VM to the SIEM, I began querying and analyzing the logs.
+- Inside Elastic Deployment, click on the menu icon at the top-left with the three horizontal lines and then click on the “Logs” tab under “Observability” to view the logs from the Kali VM.
+
+<img src="https://github.com/user-attachments/assets/87c01544-f3d1-4995-bb22-f4beadd058af" alt="Description" width="500>
+
+- In the search bar, enter a search query to filter the logs. For example, to search for all logs related to Nmap scans, enter the query: event.action:
+“nmap_scan” or process.args: “sudo”.
+- Click on the “Search” button to execute the search query.
+- The results of the search query will be displayed in the table below. Click on the three dots next to each event to view more details.
+
+<img src="https://github.com/user-attachments/assets/9af1c0fe-6c5f-4c2f-8548-fc906dfe1c5d" alt="Description" width="500>
+
+<img src="https://github.com/user-attachments/assets/348e6a5b-8830-4811-9608-390a1847183c" alt="Description" width="500>
+
+
+By generating and analyzing various security events in Elastic SIEM, such as authentication failures or incorrect SSH login attempts, I gained valuable insights into detecting, investigating, and responding to security incidents in real-world scenarios.
+
+### **Task 5 : Create a Dashboard to Visualize the Events**
+I utilized visualizations and dashboards in the SIEM app to analyze logs, identify patterns, and detect anomalies, including creating a dashboard to track security events over time.
+- Navigate to the Elastic web portal at https://cloud.elastic.co/.
+- Click on the menu icon on the top-left, then under “Analytics,” click on “Dashboards.”
+
+<img src="https://github.com/user-attachments/assets/f8b6cce0-1b13-4c8d-b753-049c768bd4ed" alt="Description" width="500>
+
+- Click on the “Create dashboard” button on the top right to create a new dashboard.
+
+- Click on the “Create Visualization” button to add a new visualization to the dashboard.
+
+- Select “Area” type. This will create a chart that shows the count of events over time.
+
+<img src="https://github.com/user-attachments/assets/7113ccbf-7f2e-47d5-bcc3-325c5c899555" alt="Description" width="500>
+
+- In the “Metrics” section of the visualization editor on the right, select “Count” as the vertical field type and “Timestamp” for the horizontal field. This will show the count of events over time.
+
+<img src="https://github.com/user-attachments/assets/7f306c4d-efd2-4237-9094-2043cb6453cc" alt="Description" width="500>
+
+<img src="https://github.com/user-attachments/assets/3e396a64-a3f3-474e-aead-efae495c9110" alt="Description" width="500>
+
+<img src="https://github.com/user-attachments/assets/61773b79-345f-4b33-8d5e-bbc95fe6385b" alt="Description" width="500>
+
+- Click on the “Save” button to save the visualization and then complete the rest of the settings.
+
+<img src="https://github.com/user-attachments/assets/985c2873-857a-472e-9e06-3557c88c6517" alt="Description" width="500>
+
+### **Task 6 : Create an Alert**
